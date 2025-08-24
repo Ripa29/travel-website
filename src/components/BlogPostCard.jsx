@@ -1,10 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, User } from 'lucide-react';
+import { Calendar, Clock, User, Edit, Trash } from 'lucide-react';
+import { useAuth } from '../utils/auth';
 
 const BlogPostCard = ({ post }) => {
+    const { user } = useAuth();
+
+    // Check if this is a user-created post
+    const isUserPost = () => {
+        const userPosts = JSON.parse(localStorage.getItem('userBlogPosts') || '[]');
+        return userPosts.some(userPost => userPost.id === post.id);
+    };
+
     return (
-        <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow relative">
+            {isUserPost() && user && (
+                <div className="absolute top-4 right-4 flex space-x-2">
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            // Edit functionality will be handled in parent component
+                        }}
+                        className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors"
+                        title="Edit Post"
+                    >
+                        <Edit className="w-4 h-4" />
+                    </button>
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            // Delete functionality will be handled in parent component
+                        }}
+                        className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700 transition-colors"
+                        title="Delete Post"
+                    >
+                        <Trash className="w-4 h-4" />
+                    </button>
+                </div>
+            )}
+
             <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
             <div className="p-6">
                 <div className="flex items-center text-sm text-gray-500 mb-3">

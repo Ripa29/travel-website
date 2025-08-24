@@ -61,3 +61,47 @@ export const saveReview = (review) => {
     reviews.push(review);
     return storage.set('reviews', reviews);
 };
+
+// Blog post storage functions
+export const saveBlogPost = (postData, isEditing = false) => {
+    try {
+        const existingPosts = JSON.parse(localStorage.getItem('userBlogPosts') || '[]');
+
+        if (isEditing) {
+            // Update existing post
+            const updatedPosts = existingPosts.map(post =>
+                post.id === postData.id ? postData : post
+            );
+            localStorage.setItem('userBlogPosts', JSON.stringify(updatedPosts));
+        } else {
+            // Add new post
+            const newPosts = [...existingPosts, postData];
+            localStorage.setItem('userBlogPosts', JSON.stringify(newPosts));
+        }
+        return true;
+    } catch (error) {
+        console.error('Error saving blog post:', error);
+        return false;
+    }
+};
+
+export const deleteBlogPost = (postId) => {
+    try {
+        const existingPosts = JSON.parse(localStorage.getItem('userBlogPosts') || '[]');
+        const filteredPosts = existingPosts.filter(post => post.id !== postId);
+        localStorage.setItem('userBlogPosts', JSON.stringify(filteredPosts));
+        return true;
+    } catch (error) {
+        console.error('Error deleting blog post:', error);
+        return false;
+    }
+};
+
+export const getUserBlogPosts = () => {
+    try {
+        return JSON.parse(localStorage.getItem('userBlogPosts') || '[]');
+    } catch (error) {
+        console.error('Error getting user blog posts:', error);
+        return [];
+    }
+};

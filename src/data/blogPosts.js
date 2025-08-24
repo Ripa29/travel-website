@@ -25,7 +25,7 @@ export const blogPosts = [
     `,
         image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
         author: "Sarah Johnson",
-        authorAvatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+        authorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
         date: "2024-03-15",
         readTime: "5 min read",
         category: "Destinations",
