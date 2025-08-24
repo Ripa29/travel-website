@@ -50,7 +50,7 @@ export const fetchPackages = async (filters = {}) => {
                     location: "Paris, France",
                     price: 1899,
                     duration: "5 days",
-                    image: "https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=400&h=300&fit=crop",
+                    image: "https://plus.unsplash.com/premium_photo-1661914178431-fc899737a386?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fFBhcmlzaWFuJTIwRHJlYW18ZW58MHx8MHx8fDA%3D",
                     rating: 4.6,
                     description: "Experience the romance and culture of the City of Light"
                 },
@@ -60,7 +60,7 @@ export const fetchPackages = async (filters = {}) => {
                     location: "Cairo, Egypt",
                     price: 2399,
                     duration: "9 days",
-                    image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=400&h=300&fit=crop",
+                    image: "https://media.istockphoto.com/id/1565092901/photo/the-river-nile-in-aswan-egypt.webp?a=1&b=1&s=612x612&w=0&k=20&c=2pR879PJxeh03o0XVGcP8uQs0x0Ny7_rNun5cpwZ9hs=",
                     rating: 4.7,
                     description: "Discover ancient pyramids and rich historical treasures"
                 }

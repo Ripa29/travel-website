@@ -105,7 +105,7 @@ const Navigation = () => {
             {/* Search Overlay */}
             {isSearchOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-60 flex items-start justify-center pt-20 px-4">
-                    <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl">
+                    <div className="pt-20 bg-white rounded-lg shadow-xl w-full max-w-2xl">
                         <div className="relative">
                             <form onSubmit={handleSearchSubmit} className="flex items-center p-4">
                                 <div className="relative flex-1">

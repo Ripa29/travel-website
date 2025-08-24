@@ -17,6 +17,7 @@ import YachtCharters from './pages/YachtCharters';
 import TravelInsurance from './pages/TravelInsurance';
 import Account from './pages/Account';
 import { AuthProvider } from './utils/auth';
+import TravelAdvisory from "./pages/TravelAdvisory.jsx";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
                             <Route path="/travel-insurance" element={<TravelInsurance />} />
                             <Route path="/account" element={<Account />} />
                             <Route path="/bookings" element={<Account />} />
+                            <Route path="/travel-advisory" element={<TravelAdvisory />} />
                         </Routes>
                     </main>
                     <Footer />
